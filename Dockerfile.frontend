@@ -1,0 +1,17 @@
+# 1. Base Image
+FROM python:3.9-slim
+
+# 2. Set Working Directory
+WORKDIR /app
+
+# 3. Install dependencies (Streamlit and Requests)
+RUN pip install streamlit requests pandas
+
+# 4. Copy frontend code
+COPY frontend.py .
+
+# 5. Expose default Streamlit port
+EXPOSE 8501
+
+# 6. Start command
+CMD ["streamlit", "run", "frontend.py", "--server.port=8501", "--server.address=0.0.0.0"]

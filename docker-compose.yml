@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  # 1. Backend (API + AI)
+  backend:
+    build: . # By default, uses Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - OLLAMA_HOST=http://host.docker.internal:11434
+      - DATABASE_URL=postgresql://user:password@db:5432/emails_db
+    env_file:
+      - .env
+    depends_on:
+      - db
+
+  # 2. Database (PostgreSQL)
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: emails_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # 3. Frontend (Web UI) [Newly added]
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend # Specify the frontend Dockerfile
+    ports:
+      - "8501:8501" # Expose port 8501 to the browser
+    depends_on:
+      - backend # Frontend starts only after Backend is up
+
+volumes:
+  postgres_data:
