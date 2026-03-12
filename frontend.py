@@ -71,7 +71,7 @@ try:
         
         # Simple beautification for table display
         # We only display crucial columns
-        display_df = df[["id", "subject", "sender", "category", "action", "body"]]
+        display_df = df[["id", "subject", "sender", "category", "action", "body", "draft"]]
         
         st.dataframe(
             display_df,
@@ -80,6 +80,7 @@ try:
                 "body": st.column_config.TextColumn("Content Preview", width="large"),
                 "category": st.column_config.TextColumn("Category", width="small"),
                 "action": st.column_config.TextColumn("Action", width="small"),
+                "draft": st.column_config.TextColumn("Draft Response (If Actionable)", width="large"),
             },
             hide_index=True,
         )

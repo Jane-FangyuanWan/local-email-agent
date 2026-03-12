@@ -8,6 +8,8 @@ import ollama
 from sqlalchemy import create_engine, Column, Integer, String, Text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
+from pydantic import BaseModel, Field
+import json
 
 app = FastAPI()
 
@@ -33,6 +35,7 @@ class EmailModel(Base):
     body = Column(Text)
     category = Column(String) # AI-analyzed category
     action = Column(String)   # AI-suggested action (Reply/Ignore)
+    draft = Column(Text)      # AI-generated draft reply
 
 # Automatically create tables (if they do not exist)
 Base.metadata.create_all(bind=engine)
@@ -75,30 +78,33 @@ def parse_email_content(msg_data):
     return subject, sender, body[:500]
 
 def ask_ollama(subject, sender, body):
-    # Simplified Prompt to extract results easily
+    # Enforce structured output using JSON Mode and Pydantic schema concepts
     prompt = f"""
-    Analyze this email.
+    Analyze this email and provide a structured JSON response.
     Sender: {sender}
     Subject: {subject}
     Body: {body}
     
-    Output strictly in this format:
-    Category: [Finance/Academic/Personal/Spam]
-    Action: [Reply/Ignore]
+    You must respond ONLY with a valid JSON object matching this schema:
+    {{
+        "category": "[Finance/Academic/Personal/Spam/General]",
+        "action": "[Reply/Ignore]",
+        "draft": "[If the action is Reply, provide a short, professional draft response here. Otherwise, return an empty string]"
+    }}
     """
     try:
-        response = ollama.chat(model='llama3.2', messages=[{'role': 'user', 'content': prompt}])
+        response = ollama.chat(model='llama3.2', messages=[{'role': 'user', 'content': prompt}], format='json')
         content = response['message']['content']
-        # Simple extraction logic (can use Regex or JSON mode in real projects)
-        category = "General"
-        action = "Ignore"
-        if "Category:" in content:
-            category = content.split("Category:")[1].split("\n")[0].strip()
-        if "Action:" in content:
-            action = content.split("Action:")[1].split("\n")[0].strip()
-        return category, action
-    except:
-        return "Error", "Ignore"
+        
+        # Parse the JSON string reliably
+        data = json.loads(content)
+        category = data.get("category", "General")
+        action = data.get("action", "Ignore")
+        draft = data.get("draft", "")
+        return category, action, draft
+    except Exception as e:
+        print(f"Error calling Ollama: {e}")
+        return "Error", "Ignore", ""
 
 # --- 3. Endpoints ---
 
@@ -125,10 +131,10 @@ def scan_inbox(limit: int = 3, db: Session = Depends(get_db)):
         existing_email = db.query(EmailModel).filter(EmailModel.subject == subject).first()
         if not existing_email:
             # AI Inference
-            cat, act = ask_ollama(subject, sender, body)
+            cat, act, draft = ask_ollama(subject, sender, body)
             
             # Save to database!!
-            new_email = EmailModel(subject=subject, sender=sender, body=body, category=cat, action=act)
+            new_email = EmailModel(subject=subject, sender=sender, body=body, category=cat, action=act, draft=draft)
             db.add(new_email)
             db.commit()
             saved_count += 1
