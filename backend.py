@@ -10,7 +10,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
 from pydantic import BaseModel, Field
 import json
-
+import smtplib
+from email.mime.text import MIMEText
 app = FastAPI()
 
 # ================= Configuration Area =================
@@ -170,3 +171,36 @@ def delete_email(email_id: int, db: Session = Depends(get_db)):
     db.commit()
     
     return {"status": "success", "message": f"Deleted email ID {email_id}"}
+
+
+# [New] Feature D: Send a reply (Outgoing Email Module)
+@app.post("/emails/{email_id}/send")
+def send_reply(email_id: int, db: Session = Depends(get_db)):
+    # 1. Find email
+    email_record = db.query(EmailModel).filter(EmailModel.id == email_id).first()
+    
+    # 2. Raise error if not found
+    if not email_record:
+        raise HTTPException(status_code=404, detail="Email not found")
+    if not email_record.draft:
+        raise HTTPException(status_code=400, detail="No draft to send")
+    
+    # 3. Send via SMTP
+    try:
+        from_email = EMAIL_USER
+        password = EMAIL_PASS
+        to_email = email_record.sender
+        
+        msg = MIMEText(email_record.draft)
+        msg['Subject'] = f"Re: {email_record.subject}"
+        msg['From'] = from_email
+        msg['To'] = to_email
+        
+        server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
+        server.login(from_email, password)
+        server.sendmail(from_email, to_email, msg.as_string())
+        server.quit()
+        
+        return {"status": "success", "message": f"Reply sent to {to_email}"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

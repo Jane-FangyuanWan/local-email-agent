@@ -1,0 +1,794 @@
+[
+  {
+    "input_email": "Subject: Your Invoice #4421\nFrom: billing@webhost.com\nBody: Hello, your monthly hosting invoice for $15.00 is now due. Please click here to pay.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: CS5100 Final Project Extension\nFrom: prof.smith@university.edu\nBody: Hi students, I have decided to extend the deadline for the final project by 48 hours. Please ensure your progress reports are submitted by Friday.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Reply",
+      "draft": "Thank you for the update, Professor. I will make sure to submit the progress report by the new Friday deadline."
+    }
+  },
+  {
+    "input_email": "Subject: Suspicious Login Attempt on Your Account\nFrom: security-alert@bankofamerica-secure.xyz\nBody: Dear Customer, we detected unusual activity on your account. Click here immediately to verify your identity or your account will be suspended within 24 hours.",
+    "output_json": {
+      "category": "Spam",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Hey, long time no talk!\nFrom: jake.martinez@gmail.com\nBody: Hey! It's been ages since we caught up. I'm going to be in town next weekend — want to grab dinner Saturday night? Let me know what works for you.",
+    "output_json": {
+      "category": "Personal",
+      "action": "Reply",
+      "draft": "Hey Jake! Great to hear from you. Saturday dinner sounds awesome — I'm free after 6 PM. Let me know where you'd like to go!"
+    }
+  },
+  {
+    "input_email": "Subject: Payment Received - Order #99281\nFrom: receipts@amazon.com\nBody: Thank you for your purchase. Your payment of $47.99 has been received. Your order is being processed and will ship within 2 business days. Track your order here.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Midterm Grades Posted\nFrom: registrar@university.edu\nBody: Dear Student, midterm grades for the Fall 2026 semester have been posted to your student portal. Please log in to review your grades and contact your instructor if you have questions.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: You've Won a $500 Gift Card!\nFrom: promo@deals-winner-now.com\nBody: Congratulations! You have been selected as the winner of a $500 Amazon gift card. Claim your reward by clicking the link below and entering your personal information.",
+    "output_json": {
+      "category": "Spam",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Advising Appointment Confirmation\nFrom: advising@university.edu\nBody: Hi, this is a confirmation that your advising appointment with Dr. Chen is scheduled for Tuesday, April 7 at 2:00 PM in Room 312. Please bring your degree audit.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Reply",
+      "draft": "Thank you for the confirmation. I will be there on Tuesday at 2:00 PM with my degree audit ready."
+    }
+  },
+  {
+    "input_email": "Subject: Rent Payment Due April 1\nFrom: admin@mapleridgeapts.com\nBody: Dear Tenant, this is a reminder that your rent payment of $1,200.00 is due on April 1st. Please submit via the resident portal or drop a check at the leasing office.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Mom's birthday plans\nFrom: sister.liu@gmail.com\nBody: Hey, just checking in — have you decided what you're getting Mom for her birthday? I was thinking we could go in on something together. Also, are you driving home or taking the train? Let me know!",
+    "output_json": {
+      "category": "Personal",
+      "action": "Reply",
+      "draft": "Hey! Going in together sounds like a great idea. I'm thinking of driving home — I can pick you up on the way if you want. Let's brainstorm gift ideas this week?"
+    }
+  },
+  {
+    "input_email": "Subject: ACTION REQUIRED: Verify Your Email Address\nFrom: no-reply@account-verify-secure.net\nBody: Your email account will be deactivated unless you verify your identity within 12 hours. Click the button below to confirm your account now.",
+    "output_json": {
+      "category": "Spam",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: TA Office Hours Change This Week\nFrom: ta.wang@university.edu\nBody: Hi everyone, just a quick note — my office hours this Thursday are moved from 3 PM to 5 PM due to a scheduling conflict. Location remains the same (Room 210). See you there!",
+    "output_json": {
+      "category": "Academic",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Your Credit Card Statement is Ready\nFrom: alerts@chase.com\nBody: Your monthly statement for your Chase Freedom card ending in 4892 is now available. Your current balance is $312.45 with a minimum payment of $25.00 due by April 15.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Apartment Maintenance Request Update\nFrom: maintenance@mapleridgeapts.com\nBody: Hi, we wanted to let you know that your maintenance request (#1087) for the leaking kitchen faucet has been scheduled. A technician will visit on Wednesday between 10 AM and 12 PM. Please ensure access to the unit.",
+    "output_json": {
+      "category": "General",
+      "action": "Reply",
+      "draft": "Thank you for the update. I will make sure the apartment is accessible on Wednesday morning. Please let me know if the time changes."
+    }
+  },
+  {
+    "input_email": "Subject: Lose 30 Pounds in 30 Days — Guaranteed!\nFrom: info@miraclediet.biz\nBody: Try our revolutionary new weight loss pill that has helped millions shed unwanted fat. No exercise needed! Order now and get 50% off your first bottle. Limited time offer!",
+    "output_json": {
+      "category": "Spam",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Research Assistant Position — Application Status\nFrom: hr@biolab.university.edu\nBody: Dear Applicant, thank you for your interest in the Research Assistant position in Dr. Patel's lab. We would like to invite you for an interview on Friday, April 10 at 11:00 AM. Please confirm your availability.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Reply",
+      "draft": "Thank you for the opportunity. I am available on Friday, April 10 at 11:00 AM and look forward to the interview. Please let me know if there is anything I should prepare in advance."
+    }
+  },
+  {
+    "input_email": "Subject: Venmo: You paid Sarah $22.00\nFrom: venmo@venmo.com\nBody: You paid Sarah Chen $22.00 for 'Dinner split'. Your new Venmo balance is $0.00. This transaction was completed on March 28, 2026.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Are we still on for hiking?\nFrom: priya.k@gmail.com\nBody: Hey! Just wanted to confirm — are we still doing the Blue Hills hike this Sunday? I was thinking we could meet at the trailhead around 9 AM. Also, want me to bring snacks?",
+    "output_json": {
+      "category": "Personal",
+      "action": "Reply",
+      "draft": "Hey Priya! Yes, Sunday is still on for me. 9 AM at the trailhead works great. I'll bring water bottles — and yes please on the snacks!"
+    }
+  },
+  {
+    "input_email": "Subject: Homework 5 Solutions Posted\nFrom: prof.gupta@university.edu\nBody: Dear class, the solutions for Homework 5 have been posted on Canvas. Please review them before the midterm next week. Let me know if you have any questions during office hours.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Exclusive Offer: Upgrade Your LinkedIn Premium\nFrom: messages-noreply@linkedin.com\nBody: Unlock your full career potential with LinkedIn Premium. Get InMail credits, salary insights, and see who's viewed your profile. Try it free for one month!",
+    "output_json": {
+      "category": "Spam",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Team Standup Notes — March 27\nFrom: manager@company.com\nBody: Hi team, here are the standup notes from Friday. Action items: Alex — finish API integration by Tuesday. Jordan — update the staging environment. Please flag any blockers by EOD Monday.",
+    "output_json": {
+      "category": "General",
+      "action": "Reply",
+      "draft": "Thanks for the notes. I'm on track with my action items and don't have any blockers at the moment. Will update if anything comes up."
+    }
+  },
+  {
+    "input_email": "Subject: Direct Deposit Confirmation\nFrom: payroll@company.com\nBody: Your direct deposit of $2,847.63 has been processed and will be available in your account on April 1, 2026. Please log in to the HR portal to view your pay stub.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Graduation Application Deadline Reminder\nFrom: registrar@university.edu\nBody: Dear Student, this is a reminder that the deadline to apply for Spring 2026 graduation is April 15. Please submit your application through the student portal. Late applications may result in a delayed conferral.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Your package has been delivered\nFrom: shipment-tracking@ups.com\nBody: Your UPS package (tracking #1Z999AA10123456784) was delivered to your front door on March 29 at 2:14 PM. If you did not receive your package, please contact the sender.",
+    "output_json": {
+      "category": "General",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: URGENT: Your PayPal Account Has Been Limited\nFrom: service@paypa1-security.com\nBody: We've noticed irregular activity on your PayPal account. Your account access has been limited until you confirm your identity. Click below to resolve this issue immediately.",
+    "output_json": {
+      "category": "Spam",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Recommendation Letter Request\nFrom: prof.johnson@university.edu\nBody: Hi, I received your request for a letter of recommendation for the summer internship program. I'd be happy to write one. Could you send me your updated resume and a brief description of the program by Friday?",
+    "output_json": {
+      "category": "Academic",
+      "action": "Reply",
+      "draft": "Thank you so much, Professor Johnson. I really appreciate your support. I will send over my updated resume and the program description by Friday. Please let me know if you need anything else."
+    }
+  },
+  {
+    "input_email": "Subject: Netflix: Your subscription price is changing\nFrom: info@mailer.netflix.com\nBody: We're updating our prices. Starting May 1, your Standard plan will increase from $15.49/month to $17.99/month. No action is needed — your subscription will continue automatically.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Miss you guys!\nFrom: college.roommate@yahoo.com\nBody: Hey! Just saw a photo from our old dorm days and it made me super nostalgic. How have you been? We really need to plan a reunion trip this summer. What do you think?",
+    "output_json": {
+      "category": "Personal",
+      "action": "Reply",
+      "draft": "Hey! That's so sweet — I've been thinking about the old days too. A reunion trip this summer sounds amazing. Let's start a group chat and figure out dates!"
+    }
+  },
+  {
+    "input_email": "Subject: Library Book Overdue Notice\nFrom: library@university.edu\nBody: Dear Patron, the following item is overdue: 'Introduction to Algorithms, 4th Edition' (Due: March 20). Please return or renew the item to avoid additional fines of $0.25/day.",
+    "output_json": {
+      "category": "General",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Claim Your Inheritance of $4.5 Million\nFrom: barrister.williams@legalfirm-uk.org\nBody: Dear Beneficiary, I am Barrister James Williams representing the estate of a deceased client who shares your surname. You are entitled to $4.5 million. Please reply with your full name and bank details.",
+    "output_json": {
+      "category": "Spam",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: CS5800 Exam 2 Study Guide\nFrom: prof.lee@university.edu\nBody: Hi class, I've uploaded the Exam 2 study guide to Canvas. The exam will cover Chapters 6-9 (heaps, quicksort, order statistics, and BSTs). Please come to the review session on Wednesday at 6 PM.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Electricity Bill — March 2026\nFrom: billing@nationalgrid.com\nBody: Your electricity bill for the period of March 1-31, 2026 is $78.42. Payment is due by April 18. You can pay online, by phone, or by mail. Thank you for being a valued customer.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Dinner at Dad's this Sunday\nFrom: mom.liu@gmail.com\nBody: Hi sweetie, Dad is making his famous dumplings this Sunday. Can you make it? Your brother is coming too. Let us know so Dad knows how much to make. Love, Mom.",
+    "output_json": {
+      "category": "Personal",
+      "action": "Reply",
+      "draft": "Hi Mom! I'd love to come — Dad's dumplings are the best. I'll be at around noon. Can't wait to see everyone!"
+    }
+  },
+  {
+    "input_email": "Subject: Invitation to Participate in a Paid Research Study\nFrom: psych.lab@university.edu\nBody: We are recruiting participants for a 1-hour study on decision-making. Compensation is a $20 Amazon gift card. If you are 18+ and interested, please sign up at the link below.",
+    "output_json": {
+      "category": "General",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Your Zelle Transfer Was Successful\nFrom: alerts@bankofamerica.com\nBody: You sent $50.00 to Michael Torres on March 28, 2026. Reference number: ZL-449281. If you did not authorize this transaction, please contact us immediately.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Group Project — Task Assignments\nFrom: teammate.sarah@university.edu\nBody: Hey team, I've split up the final project tasks on our shared doc. I assigned the data analysis section to you — can you take a look and let me know if that works? We should aim to finish by next Wednesday.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Reply",
+      "draft": "Hi Sarah, thanks for organizing the tasks. I looked at the shared doc and the data analysis section works for me. I'll aim to have my part done by Monday so we have time to integrate everything."
+    }
+  },
+  {
+    "input_email": "Subject: Make $5,000/Week Working From Home!\nFrom: careers@home-income-now.biz\nBody: Are you tired of the 9-to-5 grind? Our proven system lets you earn $5,000+ per week from the comfort of your home. No experience required! Sign up today and start earning tomorrow.",
+    "output_json": {
+      "category": "Spam",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Dentist Appointment Reminder\nFrom: frontdesk@brightsmiledental.com\nBody: This is a reminder that you have a dental cleaning appointment on Thursday, April 3 at 10:30 AM. Please arrive 10 minutes early. If you need to reschedule, call us at (781) 555-0142.",
+    "output_json": {
+      "category": "General",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Scholarship Award Notification\nFrom: financialaid@university.edu\nBody: Congratulations! You have been selected to receive the Dean's Merit Scholarship for the 2026-2027 academic year in the amount of $3,000. Please log in to the financial aid portal to accept the award by April 20.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Reply",
+      "draft": "Thank you so much for this wonderful news. I am honored to receive the Dean's Merit Scholarship. I will log in to accept the award right away. I truly appreciate this support."
+    }
+  },
+  {
+    "input_email": "Subject: Course Evaluation Reminder\nFrom: provost@university.edu\nBody: Dear Student, course evaluations for the Spring 2026 semester are now open and will close on April 14. Your feedback is valuable and helps improve the quality of instruction. All responses are anonymous.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Catching up over coffee?\nFrom: david.chen@outlook.com\nBody: Hey, I just moved back to the Boston area for work. Would love to catch up sometime — maybe grab coffee next week? I'm pretty flexible on days. Let me know!",
+    "output_json": {
+      "category": "Personal",
+      "action": "Reply",
+      "draft": "David! Welcome back to the area! I'd love to grab coffee. How about Thursday afternoon? There's a great spot on Mass Ave. Let me know what works for you."
+    }
+  },
+  {
+    "input_email": "Subject: Important: Your Student Loan Payment is Due\nFrom: servicer@mohela.com\nBody: Your student loan payment of $285.00 is due on April 5, 2026. Log in to your account to make a payment or set up autopay. If you are experiencing financial hardship, contact us about repayment options.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: RE: Internship Inquiry\nFrom: recruiter@techstartup.io\nBody: Hi, thank you for reaching out about the Software Engineering Internship. We'd love to schedule a 30-minute phone screen with you next week. Could you share your availability for Tuesday or Wednesday afternoon?",
+    "output_json": {
+      "category": "General",
+      "action": "Reply",
+      "draft": "Thank you for getting back to me. I am available both Tuesday and Wednesday afternoon between 1:00 PM and 5:00 PM. Please let me know which time works best for your team."
+    }
+  },
+  {
+    "input_email": "Subject: 🎉 Flash Sale — 80% Off Everything!\nFrom: deals@cheapgadgets-store.com\nBody: MEGA FLASH SALE! Everything in our store is 80% OFF for the next 24 hours only! iPhones, laptops, headphones — all at unbelievable prices. Shop now before it's too late!",
+    "output_json": {
+      "category": "Spam",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Lab Report Feedback\nFrom: prof.martinez@university.edu\nBody: Hi, I've reviewed your Lab Report #3. Overall, good work on the methodology section. However, your analysis needs more depth — particularly the error discussion. Please revise and resubmit by Friday. Happy to discuss during office hours.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Reply",
+      "draft": "Thank you for the feedback, Professor Martinez. I will revise the analysis section with a more thorough error discussion and resubmit by Friday. I may stop by office hours if I have questions."
+    }
+  },
+  {
+    "input_email": "Subject: Gym membership renewal\nFrom: members@bostonfitness.com\nBody: Hi, your annual gym membership is set to renew on April 15 at $49.99/month. If you wish to cancel or change your plan, please contact us at least 7 days before the renewal date.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Happy birthday!!!\nFrom: aunt.mei@gmail.com\nBody: Happy birthday, my dear! I can't believe how fast time flies. Wishing you a wonderful year ahead full of happiness and success. We're so proud of you! Love, Auntie Mei.",
+    "output_json": {
+      "category": "Personal",
+      "action": "Reply",
+      "draft": "Thank you so much, Auntie Mei! Your message really made my day. I hope to visit soon — miss you and the family!"
+    }
+  },
+  {
+    "input_email": "Subject: Parking Permit Renewal — Action Required\nFrom: parking@university.edu\nBody: Dear Permit Holder, your campus parking permit (Lot C) expires on April 30. To renew for the summer term, please submit your application by April 20. Rates and lot availability are listed on our website.",
+    "output_json": {
+      "category": "General",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Your Apple ID Has Been Locked\nFrom: support@apple-id-verify.net\nBody: Your Apple ID has been locked for security reasons. To unlock your account, verify your identity by clicking the link below. Failure to do so within 48 hours will result in permanent account suspension.",
+    "output_json": {
+      "category": "Spam",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Peer Review Assignment — CS5100\nFrom: ta.nguyen@university.edu\nBody: Hi all, peer review assignments for Project 2 are now posted on Gradescope. You have been assigned two submissions to review. Please complete your reviews by Sunday, April 6. Rubric and guidelines are attached.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Wire Transfer Confirmation\nFrom: alerts@wellsfargo.com\nBody: A wire transfer of $1,250.00 was sent from your checking account ending in 7831 on March 28, 2026. If you did not authorize this transfer, please contact us immediately at 1-800-869-3557.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: PHYS 2301 Lecture Canceled Tomorrow\nFrom: prof.nakamura@university.edu\nBody: Dear students, due to a personal emergency, tomorrow's lecture (April 1) is canceled. The material from Chapter 14 will be covered in Thursday's session instead. Please review the textbook sections in advance.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Free iPhone 16 Pro — You're Selected!\nFrom: giveaway@free-phones-today.com\nBody: You have been randomly selected to receive a brand new iPhone 16 Pro! Simply complete a short survey and pay $1.99 for shipping. Hurry — this offer expires in 3 hours!",
+    "output_json": {
+      "category": "Spam",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Weekend road trip?\nFrom: marcus.reed@gmail.com\nBody: Yo! A few of us are driving up to Vermont this Saturday for some hiking and a cabin stay. There's room for one more in the car. You in? Need to know by Thursday so we can book.",
+    "output_json": {
+      "category": "Personal",
+      "action": "Reply",
+      "draft": "That sounds like a blast! Count me in. Let me know what I should bring and what time you're planning to leave on Saturday."
+    }
+  },
+  {
+    "input_email": "Subject: Auto Insurance Policy Renewal\nFrom: noreply@geico.com\nBody: Your auto insurance policy #GA-4492817 is set to renew on April 20, 2026. Your new 6-month premium is $612.00. No action is needed for automatic renewal. Review your policy details online.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Thesis Draft Review — Comments Attached\nFrom: advisor.kim@university.edu\nBody: Hi, I've gone through your thesis draft and left detailed comments in the attached PDF. The literature review needs significant revision, but Chapters 3 and 4 are strong. Let's schedule a meeting next week to discuss.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Reply",
+      "draft": "Thank you for taking the time to review my draft, Dr. Kim. I'll carefully go through your comments and start revising the literature review. I'm available Monday or Wednesday afternoon for a meeting — would either work for you?"
+    }
+  },
+  {
+    "input_email": "Subject: Confirm Your Account — Crypto Profits Awaiting\nFrom: invest@blockchain-profits-now.io\nBody: Your crypto portfolio has earned $12,492 in passive income. Log in to your account now to withdraw your profits. If you don't have an account, one has been created for you automatically.",
+    "output_json": {
+      "category": "Spam",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Can you pick up Grandma from the airport?\nFrom: dad.liu@gmail.com\nBody: Hey kid, Grandma's flight lands at Logan on Friday at 3:15 PM, United flight 782. Your mom and I have a work thing. Can you pick her up? She'll be at Terminal B arrivals.",
+    "output_json": {
+      "category": "Personal",
+      "action": "Reply",
+      "draft": "Hi Dad! No problem, I'll be at Terminal B by 3 PM on Friday. I'll text Grandma so she knows to look for me. See you all later!"
+    }
+  },
+  {
+    "input_email": "Subject: Refund Processed — Order #TK-20398\nFrom: support@target.com\nBody: Your refund of $34.99 for Order #TK-20398 has been processed. Please allow 5-7 business days for the amount to appear in your original payment method. Thank you for shopping with us.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: MATH 3200 — Quiz 4 Rescheduled\nFrom: prof.oconnor@university.edu\nBody: Class, Quiz 4 originally scheduled for this Friday has been moved to next Monday, April 7. The material covered will remain the same (Sections 5.1-5.4). Use the extra time to prepare.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Your Daily Horoscope — Aries\nFrom: daily@astrozone-mail.com\nBody: Today the stars align for financial success, Aries! An unexpected opportunity will present itself. Subscribe to our premium astrology plan for just $9.99/month to unlock your full monthly reading.",
+    "output_json": {
+      "category": "Spam",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: 1:1 Meeting Reschedule\nFrom: manager.thompson@company.com\nBody: Hey, I need to push our 1:1 from Tuesday 10 AM to Wednesday 2 PM — something came up on my calendar. Does that time work for you? Same agenda as planned.",
+    "output_json": {
+      "category": "General",
+      "action": "Reply",
+      "draft": "Hi, Wednesday at 2 PM works for me. I'll keep the same agenda items prepared. See you then!"
+    }
+  },
+  {
+    "input_email": "Subject: HSA Contribution Reminder\nFrom: benefits@company.com\nBody: This is a reminder that you can still adjust your HSA contribution for the 2026 plan year. The annual maximum is $4,300. Log in to the benefits portal to make changes before the April 15 deadline.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Letter of Rec — Additional Info Needed\nFrom: prof.williams@university.edu\nBody: Hi, I'm working on your recommendation letter for the grad school application. Could you remind me which specific projects you worked on in my class? Also, what's the submission deadline? Thanks.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Reply",
+      "draft": "Thank you so much for writing this letter, Professor Williams. I worked on the distributed systems project (building a replicated key-value store) and the network simulation assignment. The submission deadline is April 25. Please let me know if you need anything else."
+    }
+  },
+  {
+    "input_email": "Subject: Singles in Your Area Want to Meet You!\nFrom: matches@datingalerts-now.com\nBody: 47 people in Burlington, MA have viewed your profile! Don't miss out on your perfect match. Create your free account today and start chatting instantly. Life is too short to be alone!",
+    "output_json": {
+      "category": "Spam",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Volunteer Sign-Up: Campus Food Drive\nFrom: community@university.edu\nBody: The annual spring food drive is coming up April 12-14. We need volunteers for sorting, packing, and distribution shifts. Sign up through the student activities portal. Every hour makes a difference!",
+    "output_json": {
+      "category": "General",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Splitwise: Alex added an expense\nFrom: noreply@splitwise.com\nBody: Alex Park added 'Groceries — Trader Joe's' ($62.40) and split it with you. Your share is $31.20. View the details and settle up on Splitwise.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Congrats on the new job!!\nFrom: jenny.zhao@gmail.com\nBody: OMG I just saw your LinkedIn post — congrats on the new role!! That's so exciting. We should celebrate! Dinner on me this weekend? So proud of you!!",
+    "output_json": {
+      "category": "Personal",
+      "action": "Reply",
+      "draft": "Jenny!! Thank you so much, that means a lot. Dinner this weekend sounds wonderful — let me know when and where. Can't wait to catch up!"
+    }
+  },
+  {
+    "input_email": "Subject: Academic Integrity Workshop — Mandatory for All TAs\nFrom: deanofstudents@university.edu\nBody: All teaching assistants are required to attend the Academic Integrity Workshop on April 8 from 1:00-3:00 PM in the Student Center Auditorium. Attendance will be recorded. Please RSVP by April 4.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Reply",
+      "draft": "Thank you for the notice. I will attend the workshop on April 8 and consider this my RSVP. Please let me know if any preparation is needed beforehand."
+    }
+  },
+  {
+    "input_email": "Subject: Get Rid of Debt Fast — Pre-Approved Loan!\nFrom: offers@quickloans-approved.com\nBody: You've been pre-approved for a personal loan up to $50,000 with rates as low as 2.9% APR! No credit check required. Apply in 60 seconds and get funded today. Don't let debt hold you back!",
+    "output_json": {
+      "category": "Spam",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Fire Alarm Test — April 3\nFrom: facilities@mapleridgeapts.com\nBody: Dear Residents, the fire alarm system will be tested on Thursday, April 3 between 9:00 AM and 12:00 PM. Alarms will sound intermittently during this period. No evacuation is required. We apologize for the inconvenience.",
+    "output_json": {
+      "category": "General",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: W-2 Form Available\nFrom: payroll@company.com\nBody: Your W-2 form for tax year 2025 is now available for download on the HR portal. Please retrieve it at your earliest convenience for your tax filing. Contact payroll@company.com with questions.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Independent Study Proposal — Follow Up\nFrom: prof.ramirez@university.edu\nBody: Hi, I reviewed your independent study proposal on NLP-based text summarization. The topic looks promising, but I'd like you to narrow the scope to abstractive summarization specifically. Can we meet Thursday to discuss?",
+    "output_json": {
+      "category": "Academic",
+      "action": "Reply",
+      "draft": "Thank you for reviewing my proposal, Professor Ramirez. Narrowing the scope to abstractive summarization makes sense. I'm available Thursday afternoon — would 2:00 or 3:00 PM work for you?"
+    }
+  },
+  {
+    "input_email": "Subject: Missed you at the party!\nFrom: roommate.kevin@gmail.com\nBody: Dude, you missed an epic time at Sam's place last night. Everyone was asking about you. We're doing a game night at ours next Friday — please tell me you're free this time?",
+    "output_json": {
+      "category": "Personal",
+      "action": "Reply",
+      "draft": "Ah man, I'm bummed I missed it! Next Friday game night I'll definitely be there. Should I bring anything? Count me in!"
+    }
+  },
+  {
+    "input_email": "Subject: Your Subscription to TechCrunch Daily\nFrom: newsletters@techcrunch.com\nBody: Here's your daily TechCrunch digest: Top stories include a new AI chip from NVIDIA, a Series B round for a climate tech startup, and Apple's latest patent filing. Read more at techcrunch.com.",
+    "output_json": {
+      "category": "General",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Fraudulent Charge Alert\nFrom: alerts@discover.com\nBody: We detected a potentially fraudulent charge of $299.99 at ELECTRONICS WORLD on your Discover card ending in 5523. If you made this purchase, no action is needed. If not, please call 1-800-347-2683 immediately.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: ECON 2010 — Extra Credit Opportunity\nFrom: prof.baker@university.edu\nBody: Students, there is an optional extra credit assignment available — a 2-page reflection on the guest lecture from last week. Worth up to 3% of your final grade. Submit via Canvas by April 11.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Enlarge Your... Business Network Today!\nFrom: growth@biz-network-boost.com\nBody: Struggling to grow your professional network? Our AI-powered platform connects you with thousands of decision-makers. Sign up FREE and watch your business explode! Limited spots available.",
+    "output_json": {
+      "category": "Spam",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Sprint Retrospective Action Items\nFrom: scrum.master@company.com\nBody: Hi team, here are the action items from today's retro: 1) Improve PR review turnaround — aim for 24 hours. 2) Add integration tests before merging. 3) Schedule a knowledge-sharing session on microservices. Owners — please update the board by Friday.",
+    "output_json": {
+      "category": "General",
+      "action": "Reply",
+      "draft": "Thanks for the summary. I'll update my action items on the board by Friday and will aim to improve my PR review turnaround this sprint."
+    }
+  },
+  {
+    "input_email": "Subject: Roth IRA Contribution Reminder\nFrom: investing@fidelity.com\nBody: You still have time to make a Roth IRA contribution for the 2025 tax year. The deadline is April 15, 2026. The maximum contribution is $7,000. Log in to your Fidelity account to contribute.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Capstone Presentation Schedule\nFrom: capstone.coordinator@university.edu\nBody: Dear students, the capstone presentation schedule has been finalized. Your team (Team 7) is slated for April 18 at 10:30 AM in Room 401. Each member must present for 5 minutes. Please confirm receipt of this email.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Reply",
+      "draft": "Thank you for the schedule. I confirm receipt — our team will be prepared for April 18 at 10:30 AM in Room 401."
+    }
+  },
+  {
+    "input_email": "Subject: IRS Tax Refund — Claim Now\nFrom: refund@irs-gov-refund.us\nBody: Our records indicate you are owed a federal tax refund of $3,247.00. To process your refund, please verify your Social Security Number and bank routing information by clicking the secure link below.",
+    "output_json": {
+      "category": "Spam",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Photos from the wedding!\nFrom: cousin.amy@icloud.com\nBody: Hey! I finally uploaded all the photos from Uncle Richard's wedding to Google Photos. Here's the shared album link. You looked great in that outfit by the way! Let me know if you want any prints.",
+    "output_json": {
+      "category": "Personal",
+      "action": "Reply",
+      "draft": "Thanks for sharing these, Amy! I'll take a look at the album tonight. The wedding was so much fun. If there are any good group shots, I'd love a print!"
+    }
+  },
+  {
+    "input_email": "Subject: Lease Renewal Offer\nFrom: leasing@mapleridgeapts.com\nBody: Dear Resident, your current lease expires on June 30, 2026. We'd like to offer you a renewal at $1,250/month (a $50 increase). Please respond by May 1 to secure your unit. We'd love to have you stay!",
+    "output_json": {
+      "category": "Finance",
+      "action": "Reply",
+      "draft": "Thank you for the renewal offer. I am interested in staying but would like to discuss the rent increase. Is there any flexibility on the new rate? I've been a reliable tenant and would appreciate the consideration."
+    }
+  },
+  {
+    "input_email": "Subject: Summer Course Registration Now Open\nFrom: registrar@university.edu\nBody: Dear Student, registration for Summer 2026 courses is now open. Classes fill quickly — log in to the student portal to browse available sections and register. The add/drop deadline is May 15.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Your Computer is Infected — Act Now!\nFrom: support@windows-security-alert.net\nBody: WARNING: Our scan has detected 47 viruses on your computer. Your personal data is at risk! Download our free antivirus software immediately to protect your files and passwords.",
+    "output_json": {
+      "category": "Spam",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Dog sitting next week?\nFrom: neighbor.lisa@gmail.com\nBody: Hey! I'm traveling for work Tue-Thu next week. Any chance you could pop in on Biscuit a couple of times? I'll leave a key and food out. Happy to return the favor anytime — or treat you to lunch!",
+    "output_json": {
+      "category": "Personal",
+      "action": "Reply",
+      "draft": "Hi Lisa! I'd be happy to check on Biscuit next week. I can stop by mornings and evenings. Just leave me the details and I'll take care of him!"
+    }
+  },
+  {
+    "input_email": "Subject: New Expense Report Policy — Effective April 1\nFrom: finance@company.com\nBody: Hi all, starting April 1, all expense reports must be submitted within 14 days of the expense date (previously 30 days). Receipts over $25 require manager pre-approval. Full policy attached. Questions? Reach out to the finance team.",
+    "output_json": {
+      "category": "General",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Cashback Earned This Month\nFrom: rewards@citi.com\nBody: Great news! You earned $18.42 in cashback rewards this month on your Citi Double Cash card ending in 9034. Your total redeemable balance is $72.15. Log in to redeem or let it accumulate.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: BIOL 1102 Lab Partners Assigned\nFrom: ta.ross@university.edu\nBody: Hi everyone, lab partner assignments for the remaining experiments are posted on Canvas. Please connect with your partner before Thursday's session to review the pre-lab materials. Email me if there are any conflicts.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Cheap Prescription Drugs — No Rx Needed\nFrom: pharmacy@discount-meds-online.biz\nBody: Get your medications at 90% off retail prices! No prescription required. Fast, discreet shipping worldwide. Viagra, Xanax, Adderall — all available without a doctor visit. Order now!",
+    "output_json": {
+      "category": "Spam",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Code Review Request — PR #482\nFrom: colleague.nina@company.com\nBody: Hey, I just opened PR #482 for the new authentication middleware. Could you review it when you get a chance? It's about 200 lines — shouldn't take long. No rush, but before Wednesday's merge would be great.",
+    "output_json": {
+      "category": "General",
+      "action": "Reply",
+      "draft": "Hey Nina, sure thing! I'll review PR #482 by end of day tomorrow. I'll leave comments directly on the PR."
+    }
+  },
+  {
+    "input_email": "Subject: Tax Return Accepted by IRS\nFrom: noreply@turbotax.intuit.com\nBody: Good news! The IRS has accepted your 2025 federal tax return filed on March 25, 2026. Your estimated refund of $1,847.00 should arrive within 21 days. Track your refund at irs.gov/refunds.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Incomplete Grade — Action Required\nFrom: prof.davis@university.edu\nBody: Hi, this is a reminder that you received an Incomplete in CS5200 last semester. Per university policy, you must submit the outstanding final project by April 30 or the grade converts to an F. Please let me know your status.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Reply",
+      "draft": "Thank you for the reminder, Professor Davis. I am actively working on the final project and plan to submit it by April 20. I will reach out if I encounter any issues. I appreciate your patience."
+    }
+  },
+  {
+    "input_email": "Subject: FWD: Hilarious video you HAVE to see\nFrom: unknown.sender@hotmail.com\nBody: OMG this is the funniest thing I've ever seen!! Click here to watch >> [suspicious-link.ru/video]. Forward this to everyone you know!!!",
+    "output_json": {
+      "category": "Spam",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Potluck at my place — April 12\nFrom: friend.omar@gmail.com\nBody: Hey everyone! I'm hosting a potluck dinner on Saturday, April 12 at 6 PM. Bring a dish and your favorite beverage. Let me know if you're coming so I can plan the seating. Address: 45 Elm St, Apt 3.",
+    "output_json": {
+      "category": "Personal",
+      "action": "Reply",
+      "draft": "Hey Omar! I'm in — sounds like a great time. I'll bring a pasta dish. See you on the 12th!"
+    }
+  },
+  {
+    "input_email": "Subject: AWS Billing Alert — Threshold Exceeded\nFrom: no-reply@amazonaws.com\nBody: Your estimated AWS charges for the current billing period have exceeded the threshold you set ($50.00). Current estimated charges: $63.17. Review your usage and billing dashboard to manage costs.",
+    "output_json": {
+      "category": "Finance",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Career Fair — April 16\nFrom: careercenter@university.edu\nBody: Don't miss the Spring 2026 Career Fair on April 16 from 10 AM - 3 PM in the student center. Over 80 employers will be present. Bring copies of your resume and dress professionally. Register on Handshake.",
+    "output_json": {
+      "category": "General",
+      "action": "Ignore",
+      "draft": ""
+    }
+  },
+  {
+    "input_email": "Subject: Grade Dispute — Response\nFrom: prof.chen@university.edu\nBody: Hi, I reviewed your grade dispute for Homework 6. After re-examining your submission, I agree that Problem 3 deserves partial credit. I've updated your score from 72 to 79. Let me know if you have further questions.",
+    "output_json": {
+      "category": "Academic",
+      "action": "Reply",
+      "draft": "Thank you for taking the time to re-examine my submission, Professor Chen. I appreciate the updated score. No further questions on my end."
+    }
+  }
+]

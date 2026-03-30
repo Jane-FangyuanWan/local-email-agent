@@ -57,6 +57,26 @@ with st.sidebar:
         except Exception as e:
             st.error(f"Connection failed: {e}")
 
+    st.divider()
+
+    # 3. Send Reply functional area [This is newly added!]
+    st.subheader("✉️ Send Reply")
+    send_id = st.number_input("Enter Email ID to send draft:", min_value=1, step=1, key="send_id")
+    
+    if st.button("Send Reply"):
+        try:
+            res = requests.post(f"{API_URL}/emails/{send_id}/send")
+            
+            if res.status_code == 200:
+                st.success(f"Reply for Email {send_id} sent!")
+                import time
+                time.sleep(1) 
+                st.rerun()    
+            else:
+                st.error(f"Error: {res.json().get('detail', 'Could not send that ID.')}")
+        except Exception as e:
+            st.error(f"Connection failed: {e}")
+
 # --- Main Page: Display Data ---
 st.subheader("📬 Inbox Intelligence")
 
