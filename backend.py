@@ -78,23 +78,25 @@ def parse_email_content(msg_data):
         body = msg.get_payload(decode=True).decode()
     return subject, sender, body[:500]
 
+class EmailAnalysis(BaseModel):
+    category: str = Field(description="[Finance/Academic/Personal/Spam/General]")
+    action: str = Field(description="[Reply/Ignore]")
+    draft: str = Field(description="[If the action is Reply, provide a short, professional draft response here. Otherwise, return an empty string]")
+
 def ask_ollama(subject, sender, body):
-    # Enforce structured output using JSON Mode and Pydantic schema concepts
+    # Enforce structured output using Pydantic JSON Schema
     prompt = f"""
-    Analyze this email and provide a structured JSON response.
+    Analyze this email.
     Sender: {sender}
     Subject: {subject}
     Body: {body}
-    
-    You must respond ONLY with a valid JSON object matching this schema:
-    {{
-        "category": "[Finance/Academic/Personal/Spam/General]",
-        "action": "[Reply/Ignore]",
-        "draft": "[If the action is Reply, provide a short, professional draft response here. Otherwise, return an empty string]"
-    }}
     """
     try:
-        response = ollama.chat(model='llama3.2', messages=[{'role': 'user', 'content': prompt}], format='json')
+        response = ollama.chat(
+            model='llama3.2', 
+            messages=[{'role': 'user', 'content': prompt}], 
+            format=EmailAnalysis.model_json_schema()
+        )
         content = response['message']['content']
         
         # Parse the JSON string reliably
@@ -151,6 +153,20 @@ def scan_inbox(limit: int = 3, db: Session = Depends(get_db)):
 def get_all_emails(db: Session = Depends(get_db)):
     # SELECT * FROM emails;
     return db.query(EmailModel).all()
+
+# [New] Feature: Update a specific email's draft
+class DraftUpdate(BaseModel):
+    draft: str
+
+@app.put("/emails/{email_id}/draft")
+def update_draft(email_id: int, payload: DraftUpdate, db: Session = Depends(get_db)):
+    email_record = db.query(EmailModel).filter(EmailModel.id == email_id).first()
+    if not email_record:
+        raise HTTPException(status_code=404, detail="Email not found")
+    
+    email_record.draft = payload.draft
+    db.commit()
+    return {"status": "success", "message": "Draft updated successfully"}
 
 # ... Previous code ...
 

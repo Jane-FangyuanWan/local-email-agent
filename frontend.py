@@ -57,25 +57,7 @@ with st.sidebar:
         except Exception as e:
             st.error(f"Connection failed: {e}")
 
-    st.divider()
 
-    # 3. Send Reply functional area [This is newly added!]
-    st.subheader("✉️ Send Reply")
-    send_id = st.number_input("Enter Email ID to send draft:", min_value=1, step=1, key="send_id")
-    
-    if st.button("Send Reply"):
-        try:
-            res = requests.post(f"{API_URL}/emails/{send_id}/send")
-            
-            if res.status_code == 200:
-                st.success(f"Reply for Email {send_id} sent!")
-                import time
-                time.sleep(1) 
-                st.rerun()    
-            else:
-                st.error(f"Error: {res.json().get('detail', 'Could not send that ID.')}")
-        except Exception as e:
-            st.error(f"Connection failed: {e}")
 
 # --- Main Page: Display Data ---
 st.subheader("📬 Inbox Intelligence")
@@ -104,6 +86,40 @@ try:
             },
             hide_index=True,
         )
+        
+        st.divider()
+        st.subheader("✍️ Review & Edit Draft")
+        
+        edit_id = st.selectbox("Select Email ID to review/edit draft:", df['id'].tolist())
+        
+        if edit_id:
+            email_row = df[df['id'] == edit_id].iloc[0]
+            current_draft = email_row['draft'] if pd.notna(email_row['draft']) else ""
+            
+            with st.form("edit_draft_form"):
+                new_draft = st.text_area("Draft content:", value=current_draft, height=200)
+                col1, col2 = st.columns(2)
+                with col1:
+                    save_submitted = st.form_submit_button("💾 Save Draft")
+                with col2:
+                    send_submitted = st.form_submit_button("🚀 Save & Send Reply")
+                
+                if save_submitted or send_submitted:
+                    res = requests.put(f"{API_URL}/emails/{edit_id}/draft", json={"draft": new_draft})
+                    if res.status_code == 200:
+                        if send_submitted:
+                            send_res = requests.post(f"{API_URL}/emails/{edit_id}/send")
+                            if send_res.status_code == 200:
+                                st.success(f"Reply sent successfully for ID {edit_id}!")
+                            else:
+                                st.error(f"Failed to send: {send_res.json().get('detail', 'Unknown error')}")
+                        else:
+                            st.success("Draft saved successfully!")
+                    else:
+                        st.error(f"Failed to save draft: {res.text}")
+                    import time
+                    time.sleep(1)
+                    st.rerun()
     else:
         st.info("No emails found in database. Click 'Scan New Emails' to start.")
         
